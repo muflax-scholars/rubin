@@ -97,7 +97,7 @@ def activate!
   gems     	= File.join(Opts[:gems], ".gem", ruby_info.engine, ruby_info.version)
   gems_bin 	= File.join(gems, "bin")
 
-  new_env = Environment.from_hash(
+  env = Environment.from_hash(
     :path    	=> Environment.reduced_path("#{gems_bin}:#{ruby_info.bin_dir}:#{path}"),
     :gem_home	=> gems,
     :gem_path	=> Environment.reduced_path("#{gems}:#{ruby_info.gem_path}"),
@@ -105,7 +105,7 @@ def activate!
 
   $stderr.puts "activating ruby #{ruby_bin} with gems in #{env.gem_home}" if Opts[:verbose]
 
-  puts new_env.to_shell_commands
+  puts env.to_shell_commands
   puts "rehash" if Opts[:rehash]
 end
 
