@@ -1,0 +1,3 @@
+[submodule "trollop"]
+	path = trollop
+	url = git://github.com/manageiq/trollop.git
