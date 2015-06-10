@@ -4,7 +4,7 @@
 # License: GNU GPLv3 (or later) <http://www.gnu.org/copyleft/gpl.html>
 
 # load manual version of trollop because we might not have any gems running
-require File.dirname(__FILE__) + "/trollop/lib/trollop"
+require (File.dirname(File.realpath(__FILE__))) + "/trollop/lib/trollop"
 
 Opts = Trollop.options do
   opt :verbose,	"verbose output"
